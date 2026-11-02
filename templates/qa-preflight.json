@@ -1,0 +1,18 @@
+{
+  "snapshot": "REPLACE_WITH_REVIEWED_VERSION",
+  "checks": {
+    "targets": "pending",
+    "facts": "pending",
+    "approved_voice": "pending",
+    "headings": "pending",
+    "placement": "pending",
+    "seo": "pending",
+    "links": "pending",
+    "media": "pending",
+    "review_bundle": "pending",
+    "write_scope": "pending"
+  },
+  "evidence": {},
+  "limitations": [],
+  "live_qa": "not_performed"
+}

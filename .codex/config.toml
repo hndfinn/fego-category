@@ -1,0 +1,21 @@
+[features]
+multi_agent = true
+
+[agents]
+max_threads = 5
+
+[agents.category_research]
+description = "Read category/product sources and establish evidence, facts and uncertainties."
+config_file = "agents/category_research.toml"
+
+[agents.category_framework]
+description = "Prepare a framework and Gemini handoff; never treat Codex prose as final content."
+config_file = "agents/category_framework.toml"
+
+[agents.category_seo]
+description = "Optimize approved content for category search intent, metadata and contextual links."
+config_file = "agents/category_seo.toml"
+
+[agents.category_qa]
+description = "Independently verify exact deployment artifacts and public-page evidence."
+config_file = "agents/category_qa.toml"
