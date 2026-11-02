@@ -1,5 +1,7 @@
 # FEGO image skill — shared routing
-Version: 1.3.0
+Routing release: 1.3.1; image generation skill: 1.2.0
+
+The owner rejected rendering v1.3. Use only canonical v1.2 rendering instructions; do not revive photographic-direction v1.3 from historical Drive proposals.
 
 ## Trigger without memorizing a skill name
 For FEGO blog, category or product work, proactively load fego-photorealistic-interior at image planning, missing-image review, visual mapping, interior realism, lighting/camera/shadow review, or a request such as “ảnh FEGO”, “tạo ảnh nội thất”, “đổi hậu cảnh, giữ sản phẩm”. Do not ask the user to remember the exact skill name or resend an already accessible source.
