@@ -36,3 +36,16 @@ Use `scripts/workflow.py` to record state and detect changed inputs. It never ca
 Initialize `runs/<slug>/state.json`; use templates for brief, Gemini handoff and manifest. Freeze research, approved text and deployment payloads. Preserve HTML links, heading hierarchy, caption/alt and media mapping from returned documents; exclude internal notes. Mark generated scenes as illustrations in provenance; never call them real product/customer photos.
 
 After approval: back up objects, preflight target and hash checks, apply staged writes sequentially, publish when authorized, and verify the public category URL plus API readback. Finish with exact edits, actual status, link to category, checks performed and remaining limitations. A live deployment failing required QA is `needs_attention`, never `complete`.
+
+## Owner requirement — space and function selection (2026-11-03)
+
+Every FEGO category buying guide MUST contain two substantive, separate customer-facing H2 sections:
+1. Gợi ý chọn sản phẩm theo không gian — adapt the product noun/category in the heading. Explain supported placements/room contexts, relevant constraints and evidence-backed product suggestions.
+2. Gợi ý chọn sản phẩm theo công năng — adapt the product noun/category. Explain tasks, storage/use priorities, tradeoffs and evidence-backed product suggestions.
+
+These are two different selection axes, not duplicate lists of models or headings with placeholder text. Source every model-specific recommendation; do not invent room-area thresholds, guaranteed fit, load/ergonomic/arm compatibility, outdoor/wet suitability or unsupported uses. Preserve the category's actual scope and link only verified destinations.
+At framework, returned-content review and final QA, check both sections for useful completed prose. A guide missing either section is incomplete; an existing approved article is not silently changed or republished just because the workflow changed.
+
+Map illustrations to the decisions the text explains. When the owner requests AI images, existing gallery photos do not count as completed generated illustrations. Use the shared FEGO image skill; propose distinct space/use scenes, one anchor and its required approval before batch. Caption/alt and source/provenance must remain mapped to each actual image. Distinguish planned, generated, QA-failed and owner-approved assets; never claim a brief/placeholder is an image. Do not force a fixed count for every category: cover each material recommendation without duplicate scenes.
+For the current bàn làm việc draft, the working plan is three space scenes plus three function scenes; this is a plan, not permission to skip the image-anchor gate.
+Keep the complete working draft on the authorized Drive with embedded illustrations, visible captions and separately copyable alt; keep generation/QA notes in a separate internal tab or project record. No CMS write or publication follows automatically from this requirement.

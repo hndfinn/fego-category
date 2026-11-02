@@ -24,3 +24,16 @@ Links need a visible non-color cue: underline, sufficient contrast, hover and ke
 Use supplied WebP assets and proper rendered dimensions/srcset; optimize only within approval and image fidelity requirements. No image-generation or product redesign without request. Distinguish real gallery assets from generated context illustrations in provenance. Caption is visible text; alt describes the image, not a caption paragraph or keyword list. Decorative assets may use empty alt. Avoid changing shared attachment alt globally without considering other uses; create a scoped asset or use supported local alt if needed.
 
 Original image total is not transferred-page weight; lazy loading and responsive candidates affect actual downloads. Do not assert Core Web Vitals or performance improvements without measurement. Long content is not inherently bad: remove repetition and vague filler based on user value, not arbitrary word count. Never add FAQ or fake reviews just to satisfy an SEO plugin.
+
+## Owner requirement — space and function selection (2026-11-03)
+
+Every FEGO category buying guide MUST contain two substantive, separate customer-facing H2 sections:
+1. Gợi ý chọn sản phẩm theo không gian — adapt the product noun/category in the heading. Explain supported placements/room contexts, relevant constraints and evidence-backed product suggestions.
+2. Gợi ý chọn sản phẩm theo công năng — adapt the product noun/category. Explain tasks, storage/use priorities, tradeoffs and evidence-backed product suggestions.
+
+These are two different selection axes, not duplicate lists of models or headings with placeholder text. Source every model-specific recommendation; do not invent room-area thresholds, guaranteed fit, load/ergonomic/arm compatibility, outdoor/wet suitability or unsupported uses. Preserve the category's actual scope and link only verified destinations.
+At framework, returned-content review and final QA, check both sections for useful completed prose. A guide missing either section is incomplete; an existing approved article is not silently changed or republished just because the workflow changed.
+
+Map illustrations to the decisions the text explains. When the owner requests AI images, existing gallery photos do not count as completed generated illustrations. Use the shared FEGO image skill; propose distinct space/use scenes, one anchor and its required approval before batch. Caption/alt and source/provenance must remain mapped to each actual image. Distinguish planned, generated, QA-failed and owner-approved assets; never claim a brief/placeholder is an image. Do not force a fixed count for every category: cover each material recommendation without duplicate scenes.
+For the current bàn làm việc draft, the working plan is three space scenes plus three function scenes; this is a plan, not permission to skip the image-anchor gate.
+Keep the complete working draft on the authorized Drive with embedded illustrations, visible captions and separately copyable alt; keep generation/QA notes in a separate internal tab or project record. No CMS write or publication follows automatically from this requirement.
