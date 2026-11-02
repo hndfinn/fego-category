@@ -1,3 +1,8 @@
+
+## Shared FEGO image skill (v1.3)
+At image planning, missing-image review, interior realism or generation requests in this workflow, read `docs/FEGO_IMAGE_SKILL.md` and proactively resolve `fego-photorealistic-interior`. Do not wait for its exact name. Prefer host metadata, then verified local installation, then the canonical private GitHub source through the connected GitHub tool. Missing native registration is not proof that the source is unavailable.
+Load and suggest the skill when relevant; render only within the user's authorized scope. Preserve this repository's authorship and approval rules; imagery routing does not start the product content pipeline for blog/category work. Honor the user's Drive storage instructions over legacy local output paths.
+
 # FEGO category workflow
 
 For category content work, read `.agents/skills/fego-category/SKILL.md` and follow its two human gates. This is a CATEGORY workflow, separate from the FEGO blog repository; do not inherit its Codex-first authorship policy.

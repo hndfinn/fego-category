@@ -3,6 +3,10 @@ name: fego-category
 description: Prepare and deploy FEGO WooCommerce category content with a mandatory user/Gemini editorial gate and a separate publish gate. Coordinate evidence, SEO, media, Elementor and live QA.
 ---
 
+## Shared imagery routing
+
+Read `references/shared-image-routing.md` at image planning or missing-image review, without waiting for the exact image skill name. Resolve the canonical image skill and preserve this workflow's authorship, content gates and publication scope. Loading/planning does not authorize rendering.
+
 # FEGO category coordinator
 
 Read `references/workflow.md`, `references/seo-and-layout.md`, and `references/deployment.md`. User instructions override this workflow; preserve explicit earlier authorization. Communicate in Vietnamese. At first use, say you are using the FEGO category workflow.
