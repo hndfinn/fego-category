@@ -96,6 +96,40 @@ Mỗi máy nên dùng Application Password riêng để thu hồi độc lập. 
 
 ### Cloud
 
+Để dùng cùng MCP từ các thiết bị truy cập **cùng cloud**, chạy bước sau trong
+setup/startup của cấu hình cloud `fego-category`, trước khi khởi động agent:
+
+```sh
+python scripts/cloud_elementor.py
+```
+
+Script giữ kết nối Elementor đã có, chạy MCP `initialize`, thông báo
+`initialized` và toàn bộ các trang `tools/list`. Nếu chưa có cấu hình trong
+runtime, script nhận `FEGO_WP_USERNAME` và `FEGO_WP_APPLICATION_PASSWORD` từ
+secret cloud rồi chỉ lưu cấu hình sau khi kiểm tra thành công. Không đặt giá trị
+secret vào startup command, Git hoặc chat. Cấu hình được lưu riêng ngoài repo,
+quyền file 0600. Không thay cấu hình server khác và không ghi website.
+
+Nền tảng phải cấp credential trong setup và/hoặc nạp lại cấu hình khi tạo runtime
+mới; một file tạo thủ công trong container cũ không bảo đảm tồn tại ở lần chạy
+sau. Cho phép HTTPS tới `fegowoodworker.com` trong network policy của cloud.
+Nếu đã có tên biến secret khác, giữ setup hiện có để nạp kết nối; không cần tạo
+credential mới chỉ để đổi tên biến.
+
+Kiểm tra lại kết nối mà không lưu cấu hình:
+
+```sh
+python scripts/cloud_elementor.py --check-only
+```
+
+Kết quả PASS xác nhận transport và danh sách tool, chưa xác nhận tool được nạp
+native vào chat hoặc quyền từng đối tượng. Sau khi lưu setup cloud, tạo một phiên
+cloud mới, xác nhận agent gọi được một tool đọc thật từ `tool_names`; thử lại từ
+thiết bị thứ hai bằng cùng tài khoản/cloud. Không dùng lệnh ghi CMS làm phép thử.
+Repo không tự sửa setup/secret/network policy đã lưu trên nền tảng. Thay đổi
+script trong repo phải được đưa vào nhánh mà cấu hình cloud checkout trước khi
+startup sử dụng được.
+
 Clone/open repo trong môi trường cloud có Python và công cụ agent. Kết nối WordPress và Google Drive qua cơ chế kết nối/secret của nền tảng; không commit secret. Nếu cloud có terminal tương tác và dùng Codex CLI, có thể dùng script kết nối như local. Nếu không có terminal tương tác, cấu hình MCP bằng UI hoặc secret provisioning được nền tảng hỗ trợ; không tự động đưa password lên command line. Kiểm tra egress HTTPS tới website/Google, quyền truy cập Drive và tool availability ở mỗi phiên.
 
 Google Drive/Docs là kết nối riêng: cấu hình plugin/OAuth của client đang dùng; Elementor MCP không cấp quyền Drive. Nếu không có connector, user có thể cung cấp file export và ảnh tại local để tiếp tục. Gate 1 vẫn cần user sửa với Gemini và xác nhận. Browser/render QA cần browser tools của môi trường; thiếu thì báo UNVERIFIED, không giả định đã xem giao diện.
