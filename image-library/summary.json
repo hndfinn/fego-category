@@ -1,0 +1,48 @@
+{
+  "generated_utc": "2026-11-04T16:12:28.6553174Z",
+  "source_folder_name": "Ảnh sản phẩm",
+  "source": "Local OneDrive metadata; correspondence to owner shared folder not yet verified",
+  "metadata_only": true,
+  "image_count": 5965,
+  "logical_bytes": 52344420049.0,
+  "enumeration_error_count": 0,
+  "local_enumeration_complete": true,
+  "remote_completeness_verified": false,
+  "top_level_groups": [
+    {
+      "name": "2021",
+      "image_count": 155,
+      "logical_bytes": 226978541.0
+    },
+    {
+      "name": "2022",
+      "image_count": 403,
+      "logical_bytes": 505124466.0
+    },
+    {
+      "name": "2023",
+      "image_count": 677,
+      "logical_bytes": 733889960.0
+    },
+    {
+      "name": "2024",
+      "image_count": 1338,
+      "logical_bytes": 7706390772.0
+    },
+    {
+      "name": "2025",
+      "image_count": 1164,
+      "logical_bytes": 9834574098.0
+    },
+    {
+      "name": "2026",
+      "image_count": 2226,
+      "logical_bytes": 33337003073.0
+    },
+    {
+      "name": "Banner",
+      "image_count": 2,
+      "logical_bytes": 459139.0
+    }
+  ]
+}

@@ -7,3 +7,5 @@ __pycache__/
 # Runtime installation of shared image skill (canonical source is product pipeline)
 .agents/skills/fego-photorealistic-interior
 .agents/skills/fego-photorealistic-interior.backup-*
+
+.image-cache/
