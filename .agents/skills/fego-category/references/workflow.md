@@ -1,4 +1,4 @@
-# Workflow and approval semantics
+# Workflow semantics
 
 ## Intake and research
 
@@ -22,6 +22,6 @@ Prepare and deploy the Gemini-returned version when the user's instruction cover
 
 ## State
 
-`researching → awaiting_content_approval → content_approved → deployment_prepared → awaiting_publish_approval → publish_approved → deployed → complete`
+`drafting → draft_ready → gemini_returned → deployment_prepared → backed_up → complete`
 
-Any failed check: `needs_attention` with reason and recovery. State snapshots live under ignored runs. The helper computes/validates hashes; it does not authenticate the approver or implement WordPress permissions. The coordinator must ground every approval in an actual message. Never auto-open a gate because a timeout elapsed.
+There are no approval states. `draft_ready` = Google Doc + section-mapped images delivered; `gemini_returned` = user handed over the Gemini version (record the actual message); `deployment_prepared` = target/block, media map and preparation QA pass; `backed_up` = current live values saved for this exact target; `complete` only after every live QA check passes. Any failed or unverified live check: `needs_attention` with reason and recovery. State snapshots live under ignored runs. The helper computes/validates hashes; it does not implement WordPress permissions.

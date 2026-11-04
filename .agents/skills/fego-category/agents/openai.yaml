@@ -1,4 +1,4 @@
 interface:
   display_name: "FEGO Category"
-  short_description: "Khung → bạn/Gemini duyệt → SEO → duyệt đăng → live QA"
-  default_prompt: "Dùng $fego-category để chuẩn bị nội dung category FEGO. Codex chỉ tạo khung; chờ tôi sửa với Gemini và duyệt trước khi tối ưu SEO, rồi áp dụng gate xuất bản."
+  short_description: "Google Doc + ảnh (một lượt) → bạn sửa bằng Gemini → triển khai WordPress + live QA"
+  default_prompt: "Dùng $fego-category cho category FEGO: xem template/section hiện tại, tạo bản nháp trên Google Doc và các ảnh cần thiết trong cùng lượt. Tôi sẽ sửa bằng Gemini rồi giao lại để triển khai lên WordPress."

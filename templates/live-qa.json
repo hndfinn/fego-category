@@ -1,0 +1,23 @@
+{
+  "target": {
+    "category_url": "https://fegowoodworker.com/danh-muc/REPLACE/",
+    "taxonomy": "product_cat",
+    "term_id": 0,
+    "block_id": 0
+  },
+  "checks": {
+    "public_status": "pending",
+    "api_readback": "pending",
+    "single_h1": "pending",
+    "placement": "pending",
+    "seo": "pending",
+    "links": "pending",
+    "media": "pending",
+    "render": "pending",
+    "publish_state": "pending"
+  },
+  "evidence": {},
+  "performed": [],
+  "limitations": [],
+  "recovery": ""
+}

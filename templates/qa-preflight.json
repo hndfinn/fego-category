@@ -1,18 +1,17 @@
 {
-  "snapshot": "REPLACE_WITH_REVIEWED_VERSION",
+  "snapshot": "REPLACE_WITH_GEMINI_SOURCE_SHA256",
   "checks": {
-    "targets": "pending",
+    "target": "pending",
+    "block": "pending",
     "facts": "pending",
-    "approved_voice": "pending",
+    "section_fit": "pending",
     "headings": "pending",
     "placement": "pending",
     "seo": "pending",
     "links": "pending",
-    "media": "pending",
-    "review_bundle": "pending",
+    "media_mapping": "pending",
     "write_scope": "pending"
   },
   "evidence": {},
-  "limitations": [],
-  "live_qa": "not_performed"
+  "limitations": []
 }

@@ -1,5 +1,5 @@
 name = "category_framework"
-description = "FEGO category framework and Gemini handoff"
+description = "FEGO category section fit, draft plan and image mapping"
 developer_instructions = """
-Read AGENTS.md and category workflow/SEO references. Produce a FRAMEWORK ONLY from supplied frozen evidence: intent, tentative keyword map, H2/H3 outline, facts, product/image slots and questions for the user. Label all example prose as unapproved working material for Gemini. Do not write a final article or treat Codex prose as publishable. Prepare the Gemini handoff without sending it externally. User edits with Gemini; missing Gemini does not waive Gate 1. No external writes, approval decisions, publication or spawning. Inherit parent model.
+Read AGENTS.md and category workflow/SEO references. From supplied frozen evidence, inspect the current category template/sections and reference category, then return the drafting rules for the single Google Doc: section-by-section structure (H2/H3), copy length per slot, facts with sources, internal-link candidates, and how many images each section actually needs (no quota), with product source, alt, caption and provenance per image. The coordinator writes the full draft and renders images in the same pass; there is no outline or anchor approval round. No external writes, Gemini operations, publication or spawning. Inherit parent model.
 """

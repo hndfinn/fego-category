@@ -9,13 +9,13 @@ description = "Read category/product sources and establish evidence, facts and u
 config_file = "agents/category_research.toml"
 
 [agents.category_framework]
-description = "Prepare a framework and Gemini handoff; never treat Codex prose as final content."
+description = "Fit the current category template/sections and plan the Google Doc draft copy and section-mapped images."
 config_file = "agents/category_framework.toml"
 
 [agents.category_seo]
-description = "Optimize approved content for category search intent, metadata and contextual links."
+description = "Review the user's Gemini-returned draft for metadata, headings, links and implementation issues without rewriting the voice."
 config_file = "agents/category_seo.toml"
 
 [agents.category_qa]
-description = "Independently verify exact deployment artifacts and public-page evidence."
+description = "Independently verify target, media mapping, backup, deployment artifacts and public-page evidence."
 config_file = "agents/category_qa.toml"

@@ -1,0 +1,15 @@
+{
+  "target": {
+    "category_url": "https://fegowoodworker.com/danh-muc/REPLACE/",
+    "taxonomy": "product_cat",
+    "term_id": 0,
+    "block_id": 0
+  },
+  "taken_at": "REPLACE_ISO_TIMESTAMP",
+  "objects": {
+    "term_description": "REPLACE_WITH_CURRENT_VALUE",
+    "seo": {},
+    "elementor_block": {},
+    "page_status": ""
+  }
+}

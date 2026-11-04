@@ -5,16 +5,17 @@
     "term_id": 0,
     "block_id": 0
   },
+  "source_sha256": "REPLACE_FROM_RECORD_GEMINI",
   "files": [
-    "approved-content.md",
+    "gemini-source.md",
     "intro.txt",
     "seo.json",
     "body.json",
-    "media.json",
+    "media-map.json",
     "review.md",
     "qa-preflight.json"
   ],
+  "media_file": "media-map.json",
   "review_file": "review.md",
-  "qa_file": "qa-preflight.json",
-  "source_sha256": "REPLACE_FROM_GEMINI_RETURN"
+  "qa_file": "qa-preflight.json"
 }

@@ -10,7 +10,8 @@
 - Product sources and observed date:
 - Facts to verify / exclusions:
 - Copy and image rules fixed before drafting:
-- Image slots mapped to sections (use actual need; no quota):
-- User's current authorization:
+- Image slots mapped to sections in `media-map.json` (use actual need; no quota):
+- User's current instruction (draft + images / deploy Gemini version):
 - Gemini-returned source file/link and hash:
-- WordPress target and deployment status:
+- Backup file (taken right before writes):
+- WordPress target, deployment status and live QA (`live-qa.json`):
