@@ -8,18 +8,18 @@ WoodMart custom elements and header/theme controls are not automatically support
 
 ## Prepare and approve
 
-Store a manifest using `templates/deployment-manifest.json`. Include the approved source and every intended payload/asset/report in `files`. Use real IDs, verified URLs, statuses and output paths. Never put credentials into any manifest. Store website backups separately under the ignored run directory.
+Store a manifest using `templates/deployment-manifest.json`. Include the Gemini-returned source and every intended payload/asset/report in `files`. Use real IDs, verified URLs, statuses and output paths. Never put credentials into any manifest. Store website backups separately under the ignored run directory.
 
-`workflow.py prepare` snapshots the manifest and referenced file bytes. Gate 2 references that digest. Check again immediately before external writes. The script is local and never grants remote permission.
+`workflow.py prepare` snapshots the manifest and referenced file bytes. Check again immediately before external writes. The script is local and never performs website writes.
 
 ## Apply
 
-1. Confirm Gate 1 + Gate 2 or scoped advance publish authorization against actual user messages.
-2. Re-read target term, metadata, Elementor tree and page status. Compare with preparation baseline.
+1. Confirm the user returned the Gemini version and instructed WordPress deployment for this category.
+2. Re-read target term, metadata, Elementor tree and page status. Compare with preparation baseline; if target identity is ambiguous, resolve it before writing.
 3. Back up current values. Upload only intended assets with deduplication by hash/map when available. Assign captions and alt independently.
 4. Update category intro via verified taxonomy endpoint and SEO through observed supported Rank Math/other SEO API. Do not assume an arbitrary meta key was saved; inspect live title/meta.
 5. Update Elementor with fresh IDs. After build-composition, never reuse an older element tree for manage-elements: it can overwrite new content. Serialize writes.
-6. Published documents may stage mutations in autosave. Publish/promote the approved changes explicitly, then read back live.
+6. Published documents may stage mutations in autosave. Publish/promote the requested changes, then read back live.
 7. Never rename blocks, change template assignments, URL, stock, tracking or unrelated global styles without scope.
 
 ## Required QA record

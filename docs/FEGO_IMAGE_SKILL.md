@@ -5,7 +5,7 @@ The owner rejected rendering v1.3. Use only canonical v1.2 rendering instruction
 
 ## Trigger without memorizing a skill name
 For FEGO blog, category or product work, proactively load fego-photorealistic-interior at image planning, missing-image review, visual mapping, interior realism, lighting/camera/shadow review, or a request such as “ảnh FEGO”, “tạo ảnh nội thất”, “đổi hậu cảnh, giữ sản phẩm”. Do not ask the user to remember the exact skill name or resend an already accessible source.
-Loading/planning is not rendering permission. If image generation was not requested, recommend the applicable workflow and continue source/media preparation; do not generate. Preserve explicit no-generation or use-originals instructions.
+For category work, the request to prepare the draft and generate its images authorizes rendering the planned images in the same pass. Do not require anchor approval. If image generation was not requested, continue source/media preparation without rendering. Preserve explicit no-generation or use-originals instructions.
 
 ## Resolve in this order
 1. Skill/plugin metadata supplied by the current host: read the matching skill and use its actual package directory.
@@ -20,8 +20,8 @@ https://github.com/hndfinn/fego-product-pipeline/blob/main/docs/IMAGE_SKILL_SETU
 
 ## Scope and gates
 The image skill governs product fidelity, visual direction, source checks, anchor, image QA and delivery. It does NOT switch blog/category authorship to product-pipeline authorship, create new editorial gates, authorize CMS writes, or impose all per-SKU product-page blocks on a blog/category.
-For product workflow, retain its dimension/use-scene requirements. In blog/category, plan images for the approved article/category scope; use verified rulers only for actual dimension/fit illustrations. Preserve existing outline/content/publish gates. A missing gallery image is not permission to invent product geometry.
-One verified anchor before a requested batch; retain valid approval for the same SKU/variant/scope. Report image generation/tool limits honestly.
+For product workflow, retain its dimension/use-scene requirements. For category work, map images to the prepared section structure and user-requested scope; use verified rulers only for actual dimension/fit illustrations. Follow the category draft → Gemini → WordPress workflow. A missing gallery image is not permission to invent product geometry.
+For product workflows, retain the product-specific verified anchor rule. For category work, do not add that approval gate; map a restrained image set to real section needs. Report image generation/tool limits honestly.
 
 ## Storage and capability
 Honor the session's Drive destination and storage instructions. No automatic local artifact fallback when the owner has prohibited it. Plugin installation/source code and business drafts are different: code may be installed for runtime discovery, while articles, review reports and deliverables remain in the authorized Drive.

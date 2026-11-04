@@ -20,8 +20,8 @@ https://github.com/hndfinn/fego-product-pipeline/blob/main/docs/IMAGE_SKILL_SETU
 
 ## Scope and gates
 The image skill governs product fidelity, visual direction, source checks, anchor, image QA and delivery. It does NOT switch blog/category authorship to product-pipeline authorship, create new editorial gates, authorize CMS writes, or impose all per-SKU product-page blocks on a blog/category.
-For product workflow, retain its dimension/use-scene requirements. In blog/category, plan images for the approved article/category scope; use verified rulers only for actual dimension/fit illustrations. Preserve existing outline/content/publish gates. A missing gallery image is not permission to invent product geometry.
-One verified anchor before a requested batch; retain valid approval for the same SKU/variant/scope. Report image generation/tool limits honestly.
+For product workflow, retain its dimension/use-scene requirements. For category work, map images to the prepared section structure and user-requested scope; use verified rulers only for actual dimension/fit illustrations. Follow the category draft → Gemini → WordPress workflow. A missing gallery image is not permission to invent product geometry.
+Follow product fidelity and source checks, but do not require a category anchor-approval gate. Keep image counts tied to useful section coverage and report generation/tool limits honestly.
 
 ## Storage and capability
 Honor the session's Drive destination and storage instructions. No automatic local artifact fallback when the owner has prohibited it. Plugin installation/source code and business drafts are different: code may be installed for runtime discovery, while articles, review reports and deliverables remain in the authorized Drive.
