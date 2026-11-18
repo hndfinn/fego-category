@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prototype (Plywood Anchor + IKEA Patterns): Không Gian Sống | FEGO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --fa-ink: #111111;
+      --fa-body: #333333;
+      --fa-muted: #595959;
+      --fa-line: #e6e2da;
+      --fa-stone: #f3f0ea;
+      --fa-accent: #8b5a2b;
+      --fa-container: 1220px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--fa-ink);
+      background: #ffffff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .proto-bar {
+      background: #111111;
+      color: #f3f0ea;
+      font-size: 12px;
+      padding: 8px 20px;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+    .proto-bar strong { color: #d6b28e; }
+
+    .fego-container {
+      width: 100%;
+      max-width: var(--fa-container);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .fego-breadcrumb {
+      padding: 18px 0 10px;
+      font-size: 13px;
+      color: var(--fa-muted);
+    }
+    .fego-breadcrumb a:hover { color: var(--fa-accent); }
+    .fego-breadcrumb .sep { margin: 0 8px; opacity: 0.5; }
+
+    /* Full-width Native Elementor/WoodMart Hero (background-image + inner flex container) */
+    .fego-hero-full {
+      width: 100%;
+      min-height: 430px;
+      background-color: var(--fa-stone);
+      background-image: linear-gradient(90deg, rgba(247, 245, 241, 0.88) 0%, rgba(247, 245, 241, 0.45) 42%, rgba(247, 245, 241, 0) 68%), url("archive_cover_phong_khach_anchor.webp");
+      background-size: cover;
+      background-position: center right;
+      display: flex;
+      align-items: center;
+      margin-bottom: 44px;
+    }
+    @media (max-width: 900px) {
+      .fego-hero-full {
+        min-height: 360px;
+        background-position: 70% center;
+        background-image: linear-gradient(180deg, rgba(247, 245, 241, 0.9) 0%, rgba(247, 245, 241, 0.65) 60%, rgba(247, 245, 241, 0.25) 100%), url("archive_cover_phong_khach_anchor.webp");
+      }
+    }
+    .fego-hero-inner {
+      max-width: 520px;
+      padding: 40px 0;
+    }
+    .fego-hero-breadcrumb {
+      font-size: 12.5px;
+      color: var(--fa-muted);
+      margin-bottom: 14px;
+    }
+    .fego-hero-breadcrumb a:hover { color: var(--fa-accent); }
+    .fego-hero-breadcrumb .sep { margin: 0 7px; opacity: 0.55; }
+    .fego-hero-kicker {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--fa-accent);
+      margin-bottom: 10px;
+    }
+    .fego-page-h1 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      color: var(--fa-ink);
+    }
+    @media (min-width: 769px) { .fego-page-h1 { font-size: 38px; } }
+    .fego-page-lead {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--fa-body);
+    }
+
+    .fego-arch-divider {
+      border-top: 1px solid var(--fa-line);
+      padding-top: 36px;
+    }
+    @media (min-width: 769px) { .fego-arch-divider { padding-top: 48px; } }
+
+    .fego-sec-block { margin-bottom: 48px; }
+    @media (min-width: 769px) { .fego-sec-block { margin-bottom: 64px; } }
+
+    .fego-sec-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 14px 24px;
+      margin-bottom: 24px;
+    }
+    .fego-arch-h2 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      color: var(--fa-ink);
+    }
+    @media (min-width: 769px) { .fego-arch-h2 { font-size: 30px; } }
+    .fego-sec-sub {
+      margin-top: 8px;
+      font-size: 14.5px;
+      color: var(--fa-muted);
+      max-width: 62ch;
+    }
+    .fego-all-link {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--fa-accent);
+      border-bottom: 1px solid currentColor;
+      white-space: nowrap;
+    }
+    .proto-badge {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: var(--fa-stone);
+      color: var(--fa-accent);
+      border-radius: 2px;
+    }
+
+    /* Pills chuẩn Plywood Archive */
+    .fego-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .fego-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: var(--fa-ink);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--fa-ink);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+    .fego-pill-btn:hover { background: var(--fa-accent); border-color: var(--fa-accent); color: #fff; }
+    .fego-pill-btn.secondary {
+      background: transparent;
+      color: var(--fa-ink);
+      border: 1px solid #d6d1c8;
+    }
+    .fego-pill-btn.secondary:hover,
+    .fego-pill-btn.secondary.is-active {
+      background: var(--fa-ink);
+      border-color: var(--fa-ink);
+      color: #ffffff;
+    }
+
+    /* 0. 7 Không gian Grid (4:5 Muebles.es / Muebles LUFE tiles) */
+    .fego-space-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    @media (min-width: 1025px) {
+      .fego-space-grid { grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    }
+    .fego-space-card {
+      position: relative;
+      display: block;
+      aspect-ratio: 4 / 5;
+      background: #eae6df;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .fego-space-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .fego-space-card:hover img { transform: scale(1.05); }
+    .fego-space-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(17,17,17,0.72) 0%, rgba(17,17,17,0.16) 44%, transparent 100%);
+      pointer-events: none;
+    }
+    .fego-space-overlay {
+      position: absolute;
+      left: 0; right: 0; bottom: 0; z-index: 2;
+      padding: 18px 20px;
+      display: flex; align-items: flex-end; justify-content: space-between; gap: 12px;
+      color: #ffffff;
+    }
+    .fego-space-title { font-size: 18px; font-weight: 600; line-height: 1.25; color: #fff; }
+    .fego-space-count { display: block; margin-top: 3px; font-size: 12.5px; color: rgba(255,255,255,0.82); }
+    .fego-space-arrow { font-size: 18px; opacity: 0.75; transition: transform 0.25s, opacity 0.25s; }
+    .fego-space-card:hover .fego-space-arrow { opacity: 1; transform: translateX(4px); }
+
+    /* Ô thứ 8: Khối màu đen / nâu brand chứa text (không dùng hình) */
+    .fego-space-card-solid {
+      background: var(--fa-ink);
+      color: #ffffff;
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background 0.25s ease;
+    }
+    .fego-space-card-solid::after { display: none; }
+    .fego-space-card-solid:hover { background: var(--fa-accent); }
+    .fego-solid-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+    }
+    .fego-solid-title {
+      margin: 10px 0 8px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #ffffff;
+    }
+    .fego-solid-desc {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .fego-solid-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    /* =================================================================
+       MẪU 1: IKEA HOTSPOT MOSAIC + WOODMART PRODUCT CAROUSEL
+       ================================================================= */
+    .ikea-mosaic {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    @media (min-width: 901px) {
+      .ikea-mosaic {
+        grid-template-columns: 1.15fr 1fr 1fr;
+        grid-template-rows: 260px 260px;
+        gap: 14px;
+      }
+      .ikea-mosaic-hero { grid-row: 1 / 3; }
+    }
+    .hotspot-tile {
+      position: relative;
+      border-radius: 2px;
+      overflow: hidden;
+      background: #eae6df;
+      min-height: 240px;
+    }
+    .hotspot-tile img.scene-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hotspot-dot {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(17, 17, 17, 0.55);
+      border: 2px solid rgba(255, 255, 255, 0.92);
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.18s ease, background 0.18s ease;
+      z-index: 4;
+    }
+    .hotspot-dot::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffffff;
+    }
+    .hotspot-dot:hover,
+    .hotspot-dot.is-open {
+      transform: translate(-50%, -50%) scale(1.12);
+      background: var(--fa-accent);
+    }
+    .hotspot-popover {
+      position: absolute;
+      z-index: 10;
+      width: 220px;
+      background: #ffffff;
+      border: 1px solid var(--fa-line);
+      border-radius: 2px;
+      padding: 10px 12px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+      display: none;
+    }
+    .hotspot-popover.is-open { display: block; }
+    .hotspot-pop-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--fa-ink);
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+    .hotspot-pop-price {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--fa-accent);
+      margin-bottom: 6px;
+    }
+    .hotspot-pop-link {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--fa-ink);
+      border-bottom: 1px solid currentColor;
+    }
+
+    /* Native WoodMart-style Product Carousel */
+    .wd-carousel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 28px 0 14px;
+    }
+    .wd-carousel-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--fa-ink);
+    }
+    .wd-carousel-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc(50% - 8px);
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      padding-bottom: 14px;
+    }
+    .wd-carousel-track::-webkit-scrollbar { display: none; }
+    @media (min-width: 769px) {
+      .wd-carousel-track { grid-auto-columns: calc(25% - 14px); gap: 18px; }
+    }
+    @media (min-width: 1025px) {
+      .wd-carousel-track { grid-auto-columns: calc(20% - 15px); gap: 18px; }
+    }
+    .wd-prod-card {
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid #ece8e0;
+      border-radius: 2px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .wd-prod-card:hover { border-color: #c8bfb2; }
+    .wd-prod-thumb {
+      aspect-ratio: 1 / 1;
+      background: #f6f5f3;
+      overflow: hidden;
+    }
+    .wd-prod-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .wd-prod-card:hover .wd-prod-thumb img { transform: scale(1.04); }
+    .wd-prod-body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+    .wd-prod-name {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--fa-ink);
+      line-height: 1.38;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .wd-prod-price { font-size: 13.5px; font-weight: 700; color: var(--fa-accent); margin-top: auto; }
+    .fego-progress-line {
+      height: 2px;
+      background: var(--fa-line);
+      position: relative;
+      margin-top: 4px;
+    }
+    .fego-progress-line::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; height: 2px; width: 42%;
+      background: var(--fa-ink);
+    }
+
+    /* =================================================================
+       MẪU 2: HORIZONTAL SPLIT BANNER (NO CTA — PURE CONTENT)
+       ================================================================= */
+    .split-banner {
+      display: grid;
+      grid-template-columns: 1fr;
+      background: var(--fa-stone);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    @media (min-width: 901px) {
+      .split-banner { grid-template-columns: 1.65fr 1fr; min-height: 380px; }
+    }
+    .split-banner-media { position: relative; min-height: 260px; background: #eae6df; }
+    .split-banner-media img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+    .split-banner-body {
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    @media (min-width: 901px) { .split-banner-body { padding: 40px 42px; } }
+    .split-banner-body h3 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--fa-ink);
+      margin-bottom: 12px;
+    }
+    .split-banner-body p {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: var(--fa-body);
+    }
+
+    /* =================================================================
+       MẪU 3: BRAND BROWN / BLACK ACCENT BLOCK + SQUARE HIGHLIGHT STRIP
+       ================================================================= */
+    .accent-split {
+      display: grid;
+      grid-template-columns: 1fr;
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    @media (min-width: 901px) {
+      .accent-split { grid-template-columns: 1.75fr 1fr; min-height: 360px; }
+    }
+    .accent-split-media { position: relative; min-height: 250px; background: #eae6df; }
+    .accent-split-media img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+    .accent-split-box {
+      background: var(--fa-accent);
+      color: #ffffff;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+    }
+    @media (min-width: 901px) { .accent-split-box { padding: 40px 38px; } }
+    .accent-split-box h3 { font-size: 24px; font-weight: 700; line-height: 1.25; color: #fff; }
+    .accent-split-box p { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.9); }
+    .circle-arrow {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid currentColor;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+    }
+
+    .square-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    @media (min-width: 1025px) {
+      .square-strip { grid-template-columns: repeat(6, 1fr); gap: 14px; }
+    }
+    .square-callout {
+      aspect-ratio: 1 / 1;
+      background: var(--fa-ink);
+      color: #ffffff;
+      padding: 18px;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .square-callout strong { font-size: 15px; font-weight: 700; line-height: 1.35; }
+    .strip-item { display: flex; flex-direction: column; gap: 8px; }
+    .strip-thumb {
+      aspect-ratio: 1 / 1;
+      background: #f6f5f3;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .strip-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .strip-item:hover .strip-thumb img { transform: scale(1.04); }
+    .strip-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--fa-ink);
+    }
+
+    /* =================================================================
+       MẪU 4: PILL AJAX TABS + PRODUCT GRID THEO KHÔNG GIAN
+       ================================================================= */
+    .tab-prod-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 22px;
+    }
+    @media (min-width: 769px) {
+      .tab-prod-grid { grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    }
+
+    /* =================================================================
+       MẪU 5: TRUST + BLOG + BRAND MESSAGE + 4-CARD POLICY
+       ================================================================= */
+    .fego-blog-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 769px) {
+      .fego-blog-grid.count-3 { grid-template-columns: repeat(3, 1fr); }
+    }
+    .fego-blog-card {
+      display: flex;
+      flex-direction: column;
+      background: #faf9f6;
+      border: 1px solid #ece8e0;
+      border-radius: 2px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .fego-blog-card:hover { border-color: #c8bfb2; transform: translateY(-2px); }
+    .fego-blog-thumb { aspect-ratio: 16 / 10; background: #eae6df; overflow: hidden; }
+    .fego-blog-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s; }
+    .fego-blog-card:hover .fego-blog-thumb img { transform: scale(1.03); }
+    .fego-blog-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .fego-blog-meta { font-size: 11.5px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--fa-accent); }
+    .fego-blog-title { font-size: 16px; font-weight: 600; line-height: 1.4; color: var(--fa-ink); }
+    .fego-blog-excerpt { font-size: 13.5px; line-height: 1.6; color: var(--fa-muted); }
+    .fego-blog-read { margin-top: auto; padding-top: 6px; font-size: 13px; font-weight: 600; color: var(--fa-ink); }
+
+    /* Brand Message Banner (thay nền xanh lá IKEA bằng #111111 / #8b5a2b) */
+    .brand-msg-banner {
+      background: var(--fa-ink);
+      color: #ffffff;
+      border-radius: 2px;
+      padding: 40px 32px;
+      margin: 40px 0 24px;
+    }
+    @media (min-width: 769px) { .brand-msg-banner { padding: 48px 52px; } }
+    .brand-msg-banner h3 {
+      font-size: clamp(24px, 2.8vw, 34px);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #fff;
+      max-width: 24ch;
+      margin-bottom: 14px;
+    }
+    .brand-msg-banner p {
+      font-size: 15px;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 62ch;
+      margin-bottom: 20px;
+    }
+
+    /* 4-Card Policy / Service Grid (như đáy Image 5) */
+    .policy-4-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 640px) { .policy-4-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1025px) { .policy-4-grid { grid-template-columns: repeat(4, 1fr); } }
+    .policy-card {
+      background: var(--fa-stone);
+      border-radius: 2px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 165px;
+      transition: background 0.2s;
+    }
+    .policy-card:hover { background: #eae5dc; }
+    .policy-icon {
+      width: 28px;
+      height: 28px;
+      color: var(--fa-ink);
+      margin-bottom: 14px;
+    }
+    .policy-card h4 { font-size: 15px; font-weight: 700; color: var(--fa-ink); margin-bottom: 6px; }
+    .policy-card p { font-size: 13px; line-height: 1.55; color: var(--fa-muted); }
+    .policy-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(17, 17, 17, 0.08);
+    }
+    .policy-dest {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--fa-muted);
+      line-height: 1.35;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="proto-bar">
+    <strong>BẢN CHỐT — /khong-gian/</strong> · Chuẩn Plywood Archive (#111111, #f3f0ea, #8b5a2b, 2px) · Tách vai trò rõ với /shop/
+  </div>
+
+  <main>
+    <!-- Full-width Native Elementor/WoodMart Hero -->
+    <header class="fego-hero-full">
+      <div class="fego-container">
+        <div class="fego-hero-inner">
+          <nav class="fego-hero-breadcrumb" aria-label="Breadcrumb">
+            <a href="https://fegowoodworker.com/">Trang chủ</a>
+            <span class="sep">/</span>
+            <span>Không gian sống</span>
+          </nav>
+          <h1 class="fego-page-h1">Chọn nội thất gỗ theo từng căn phòng</h1>
+          <p class="fego-page-lead">
+            Khám phá cách bài trí bàn, kệ, tủ, ghế và gương FEGO theo đúng công năng và diện tích từng phòng trong nhà — từ phòng khách căn hộ nhỏ, góc làm việc đến khoảng ban công thư giãn.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <div class="fego-container">
+      <!-- 0. LƯỚI 7 KHÔNG GIAN CHÍNH (Muebles.es / Muebles LUFE 4:5 tiles) -->
+      <section class="fego-sec-block" id="chon-theo-phong">
+        <div class="fego-sec-head">
+          <h2 class="fego-arch-h2">Chọn nội thất theo từng căn phòng</h2>
+          <a href="https://fegowoodworker.com/shop/" class="fego-all-link">Xem toàn bộ sản phẩm →</a>
+        </div>
+        <div class="fego-space-grid">
+          <a class="fego-space-card" href="https://fegowoodworker.com/khong-gian/phong-khach/">
+            <img src="space_phong_khach_anchor.webp" alt="Phòng khách" />
+            <div class="fego-space-overlay">
+              <div><h3 class="fego-space-title">Phòng khách</h3><span class="fego-space-count">64 sản phẩm</span></div>
+              <span class="fego-space-arrow">→</span>
+            </div>
+          </a>
+          <a class="fego-space-card" href="https://fegowoodworker.com/khong-gian/phong-ngu/">
+            <img src="space_phong_ngu.webp" alt="Phòng ngủ" />
+            <div class="fego-space-overlay">
+              <div><h3 class="fego-space-title">Phòng ngủ</h3><span class="fego-space-count">63 sản phẩm</span></div>
+              <span class="fego-space-arrow">→</span>
+            </div>
+          </a>
+          <a class="fego-space-card" href="https://fegowoodworker.com/khong-gian/phong-lam-viec/">
+            <img src="space_phong_lam_viec.webp" alt="Phòng làm việc" />
+            <div class="fego-space-overlay">
+              <div><h3 class="fego-space-title">Phòng làm việc</h3><span class="fego-space-count">52 sản phẩm</span></div>
+              <span class="fego-space-arrow">→</span>
+            </div>
+          </a>
+          <a class="fego-space-card" href="https://fegowoodworker.com/khong-gian/nha-bep/">
+            <img src="space_nha_bep.webp" alt="Bếp và phòng ăn" />
+            <div class="fego-space-overlay">
+              <div><h3 class="fego-space-title">Bếp &amp; phòng ăn</h3><span class="fego-space-count">32 sản phẩm</span></div>
+              <span class="fego-space-arrow">→</span>
+            </div>
+          </a>
+          <a class="fego-space-card" href="https://fegowoodworker.com/khong-gian/loi-vao-hanh-lang/">
+            <img src="space_loi_vao.webp" alt="Lối vào và hành lang" />
+            <div class="fego-space-overlay">
+              <div><h3 class="fego-space-title">Lối vào &amp; hành lang</h3><span class="fego-space-count">23 sản phẩm</span></div>
+              <span class="fego-space-arrow">→</span>
+            </div>
+          </a>
+          <a class="fego-space-card" href="https://fegowoodworker.com/khong-gian/phong-tam/">
+            <img src="space_phong_tam.webp" alt="Phòng tắm" />
+            <div class="fego-space-overlay">
+              <div><h3 class="fego-space-title">Phòng tắm</h3><span class="fego-space-count">7 sản phẩm</span></div>
+              <span class="fego-space-arrow">→</span>
+            </div>
+          </a>
+          <a class="fego-space-card" href="https://fegowoodworker.com/khong-gian/ban-cong/">
+            <img src="space_ban_cong.webp" alt="Ban công" />
+            <div class="fego-space-overlay">
+              <div><h3 class="fego-space-title">Ban công</h3><span class="fego-space-count">5 sản phẩm</span></div>
+              <span class="fego-space-arrow">→</span>
+            </div>
+          </a>
+          <a class="fego-space-card fego-space-card-solid" href="https://fegowoodworker.com/dich-vu-custom/">
+            <div>
+              <span class="fego-solid-kicker">Xưởng Mộc Custom</span>
+              <h3 class="fego-solid-title">Đóng theo kích thước riêng</h3>
+              <p class="fego-solid-desc">Góc nhà có hốc tường hoặc số đo đặc thù? Đặt đóng vừa khít mặt bằng thực tế.</p>
+            </div>
+            <div class="fego-solid-foot">
+              <span>Tư vấn đóng đồ gỗ</span>
+              <span class="circle-arrow">→</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           2. HOTSPOT MOSAIC + BỘ SẢN PHẨM PHỐI THEO GÓC PHÒNG (SHOP THE ROOM)
+           ================================================================ -->
+      <section class="fego-sec-block fego-arch-divider">
+        <div class="fego-sec-head">
+          <div>
+            <h2 class="fego-arch-h2">Gợi ý phối đồ thực tế cho từng không gian</h2>
+            <p class="fego-sec-sub">
+              Những gợi ý kết hợp hài hòa giữa tỷ lệ, chất liệu và ánh sáng để mọi góc sinh hoạt trong nhà luôn gọn thoáng và ấm áp.
+            </p>
+          </div>
+          <a href="https://fegowoodworker.com/shop/" class="fego-pill-btn secondary">Xem tất cả sản phẩm →</a>
+        </div>
+
+        <div class="ikea-mosaic">
+          <!-- Ô lớn bên trái (Anchor Image vừa tạo) -->
+          <div class="hotspot-tile ikea-mosaic-hero">
+            <img class="scene-img" src="shop_room_living_anchor.webp" alt="Phòng khách căn hộ nhỏ FEGO với 3 sản phẩm phối hợp" />
+            <!-- Hotspot 1: Ghế Đôn -->
+            <button type="button" class="hotspot-dot is-open" style="left: 26%; top: 73%;" data-pop="pop-stool" aria-label="Ghế Đôn Gỗ Plywood"></button>
+            <div class="hotspot-popover is-open" id="pop-stool" style="left: 29%; top: 52%;">
+              <div class="hotspot-pop-title">Ghế Đôn Gỗ Plywood Đa Năng Cao 45cm</div>
+              <div class="hotspot-pop-price">360.000₫</div>
+              <a class="hotspot-pop-link" href="https://fegowoodworker.com/san-pham/ghe-don-go-plywood-da-nang-cao-45cm/">Xem sản phẩm →</a>
+            </div>
+            <!-- Hotspot 2: Bàn Sofa -->
+            <button type="button" class="hotspot-dot" style="left: 51%; top: 76%;" data-pop="pop-table" aria-label="Bàn Sofa Plywood 2 Tầng"></button>
+            <div class="hotspot-popover" id="pop-table" style="left: 38%; top: 48%;">
+              <div class="hotspot-pop-title">Bàn Sofa Plywood 2 Tầng FEGO</div>
+              <div class="hotspot-pop-price">1.250.000₫</div>
+              <a class="hotspot-pop-link" href="https://fegowoodworker.com/san-pham/ban-sofa-plywood-2-tang-fego/">Xem sản phẩm →</a>
+            </div>
+            <!-- Hotspot 3: Kệ Harmon -->
+            <button type="button" class="hotspot-dot" style="left: 86%; top: 45%;" data-pop="pop-shelf" aria-label="Kệ Harmon 5 Tầng"></button>
+            <div class="hotspot-popover" id="pop-shelf" style="right: 16%; top: 24%;">
+              <div class="hotspot-pop-title">Kệ Harmon 5 Tầng Gỗ Thông Tự Nhiên</div>
+              <div class="hotspot-pop-price">1.450.000₫</div>
+              <a class="hotspot-pop-link" href="https://fegowoodworker.com/san-pham/ke-harmon-5-tang-go-thong/">Xem sản phẩm →</a>
+            </div>
+          </div>
+
+          <!-- 4 ô phụ bên phải (tái hiện bố cục 2x2) -->
+          <div class="hotspot-tile">
+            <img class="scene-img" src="https://fegowoodworker.com/wp-content/uploads/2026/08/4_29f5fdd53387406ea2aa7ece859d3466-600x600.jpg.webp" alt="Góc bàn làm việc gỗ" />
+            <button type="button" class="hotspot-dot" style="left: 55%; top: 58%;" data-pop="pop-desk" aria-label="Kệ Sách Basic 6 Tầng"></button>
+            <div class="hotspot-popover" id="pop-desk" style="left: 16%; top: 14%;">
+              <div class="hotspot-pop-title">Kệ Sách Basic 6 Tầng Gỗ Thông</div>
+              <div class="hotspot-pop-price">2.600.000₫</div>
+              <a class="hotspot-pop-link" href="https://fegowoodworker.com/san-pham/ke-sach-basic-6-tang-go-thong/">Xem sản phẩm →</a>
+            </div>
+          </div>
+          <div class="hotspot-tile">
+            <img class="scene-img" src="https://fegowoodworker.com/wp-content/uploads/2026/08/3_e33614d11ac54f649df5187282e0d868-600x600.png.webp" alt="Góc phòng ngủ gỗ" />
+            <button type="button" class="hotspot-dot" style="left: 48%; top: 62%;" data-pop="pop-bed" aria-label="Bàn Trang Điểm Gỗ"></button>
+            <div class="hotspot-popover" id="pop-bed" style="left: 16%; top: 14%;">
+              <div class="hotspot-pop-title">Bàn Trang Điểm Kèm Ngăn Kéo</div>
+              <div class="hotspot-pop-price">2.000.000₫</div>
+              <a class="hotspot-pop-link" href="https://fegowoodworker.com/san-pham/ban-trang-diem-chan-go-ket-hop-ngan-keo-fego-ban-lam-viec-don-go-tu-nhien-nho-gon/">Xem sản phẩm →</a>
+            </div>
+          </div>
+          <div class="hotspot-tile">
+            <img class="scene-img" src="https://fegowoodworker.com/wp-content/uploads/2026/10/upload_15846dc0b44344058af338d195d5b5a6-600x600.jpg" alt="Kệ sóng đầu giường Plywood" />
+            <button type="button" class="hotspot-dot" style="left: 50%; top: 55%;" data-pop="pop-wave" aria-label="Kệ Sóng Đầu Giường"></button>
+            <div class="hotspot-popover" id="pop-wave" style="left: 16%; top: 14%;">
+              <div class="hotspot-pop-title">Kệ Sóng Đầu Giường 2 Tầng Plywood</div>
+              <div class="hotspot-pop-price">600.000₫</div>
+              <a class="hotspot-pop-link" href="https://fegowoodworker.com/san-pham/ke-song-dau-giuong-2-tang-go-plywood/">Xem sản phẩm →</a>
+            </div>
+          </div>
+          <div class="hotspot-tile">
+            <img class="scene-img" src="https://fegowoodworker.com/wp-content/uploads/2026/11/2aoborcxken0nsorhtbmwrkfiq17algo6pr3p0sm-600x600.jpg" alt="Kệ console gỗ thông" />
+            <button type="button" class="hotspot-dot" style="left: 52%; top: 52%;" data-pop="pop-console" aria-label="Kệ Console"></button>
+            <div class="hotspot-popover" id="pop-console" style="left: 16%; top: 14%;">
+              <div class="hotspot-pop-title">Kệ Console Trưng Bày Gỗ Thông</div>
+              <div class="hotspot-pop-price">1.850.000₫</div>
+              <a class="hotspot-pop-link" href="https://fegowoodworker.com/san-pham/ke-console-trung-bay-go-thong-fego-ban-console-trang-tri-go-tu-nhien-mat-bo-tron-9/">Xem sản phẩm →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Follow-up Product Carousel (Native WoodMart Product Card parity) -->
+        <div class="wd-carousel-head">
+          <div class="wd-carousel-title">Bộ sản phẩm gợi ý trong không gian</div>
+        </div>
+        <div class="wd-carousel-track">
+          <a class="wd-prod-card" href="https://fegowoodworker.com/san-pham/ban-sofa-plywood-2-tang-fego/">
+            <div class="wd-prod-thumb"><img src="https://fegowoodworker.com/wp-content/uploads/2026/10/upload_4e5024042d80483c80821e02e14e1e7c-600x600.jpg" alt="Bàn Sofa Plywood 2 Tầng" /></div>
+            <div class="wd-prod-body">
+              <div class="wd-prod-name">Bàn Sofa Plywood 2 Tầng FEGO</div>
+              <div class="wd-prod-price">1.250.000₫</div>
+            </div>
+          </a>
+          <a class="wd-prod-card" href="https://fegowoodworker.com/san-pham/ghe-don-go-plywood-da-nang-cao-45cm/">
+            <div class="wd-prod-thumb"><img src="https://fegowoodworker.com/wp-content/uploads/2026/10/upload_b68d3dca06b842d38c225748ae9bc8c2-600x600.jpg" alt="Ghế Đôn Gỗ Plywood" /></div>
+            <div class="wd-prod-body">
+              <div class="wd-prod-name">Ghế Đôn Gỗ Plywood Đa Năng Cao 45cm</div>
+              <div class="wd-prod-price">360.000₫</div>
+            </div>
+          </a>
+          <a class="wd-prod-card" href="https://fegowoodworker.com/san-pham/ban-cafe-go-plywood-da-nang-kiem-ke-dau-giuong/">
+            <div class="wd-prod-thumb"><img src="https://fegowoodworker.com/wp-content/uploads/2026/10/upload_c765ec8749a849f88d6047800ae03425-600x600.jpg" alt="Bàn Cafe Gỗ Plywood" /></div>
+            <div class="wd-prod-body">
+              <div class="wd-prod-name">Bàn Cafe Gỗ Plywood Đa Năng</div>
+              <div class="wd-prod-price">390.000₫</div>
+            </div>
+          </a>
+          <a class="wd-prod-card" href="https://fegowoodworker.com/san-pham/ke-song-dau-giuong-2-tang-go-plywood/">
+            <div class="wd-prod-thumb"><img src="https://fegowoodworker.com/wp-content/uploads/2026/10/upload_15846dc0b44344058af338d195d5b5a6-600x600.jpg" alt="Kệ Sóng Đầu Giường" /></div>
+            <div class="wd-prod-body">
+              <div class="wd-prod-name">Kệ Sóng Đầu Giường 2 Tầng Gỗ Plywood</div>
+              <div class="wd-prod-price">600.000₫</div>
+            </div>
+          </a>
+          <a class="wd-prod-card" href="https://fegowoodworker.com/san-pham/ke-console-trung-bay-go-thong-fego-ban-console-trang-tri-go-tu-nhien-mat-bo-tron-9/">
+            <div class="wd-prod-thumb"><img src="https://fegowoodworker.com/wp-content/uploads/2026/11/2aoborcxken0nsorhtbmwrkfiq17algo6pr3p0sm-600x600.jpg" alt="Kệ Console Gỗ Thông" /></div>
+            <div class="wd-prod-body">
+              <div class="wd-prod-name">Kệ Console Trưng Bày Gỗ Thông Bo Tròn</div>
+              <div class="wd-prod-price">1.850.000₫</div>
+            </div>
+          </a>
+        </div>
+        <div class="fego-progress-line"></div>
+      </section>
+
+      <!-- ================================================================
+           3. HORIZONTAL SPLIT BANNER (THUẦN NỘI DUNG — KHÔNG CTA)
+           ================================================================ -->
+      <section class="fego-sec-block fego-arch-divider">
+        <div class="fego-sec-head">
+          <h2 class="fego-arch-h2">Linh hoạt cho mọi không gian sống</h2>
+        </div>
+        <div class="split-banner">
+          <div class="split-banner-media">
+            <img src="https://fegowoodworker.com/wp-content/uploads/2026/08/dsc07101-1-1.webp" alt="Xưởng mộc FEGO gia công nội thất gỗ đa dạng chất liệu và kích thước theo nhu cầu" />
+          </div>
+          <div class="split-banner-body">
+            <h3>Đa dạng chất liệu, đủ dòng sản phẩm &amp; sẵn sàng tùy chỉnh</h3>
+            <p>
+              Từ phòng khách, phòng ngủ, góc làm việc đến bếp ăn hay ban công, FEGO đáp ứng trọn vẹn nhờ hệ sản phẩm đồng bộ từ bàn, kệ, tủ, ghế đến gương trên nhiều nền vật liệu (gỗ thông, tần bì, Plywood và gỗ công nghiệp). Nếu mặt bằng nhà bạn có góc hẹp hoặc kích thước đặc thù, xưởng luôn sẵn sàng đóng custom theo đúng số đo và màu sắc bạn cần.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           4. THÔNG ĐIỆP XƯỞNG & 4 THẺ CHÍNH SÁCH / DỊCH VỤ
+           ================================================================ -->
+      <section class="fego-sec-block fego-arch-divider">
+        <div class="brand-msg-banner" style="margin-top: 0;">
+          <h3>Đồ gỗ tối giản bắt đầu từ xưởng mộc chỉn chu</h3>
+          <p>
+            Tại FEGO, mỗi sản phẩm đều được gia công trực tiếp tại xưởng với phôi gỗ tuyển chọn, bo cạnh kỹ lưỡng và lớp sơn phủ an toàn — để từng góc phòng trong nhà bạn luôn gọn gàng, ấm áp và bền lâu theo năm tháng.
+          </p>
+          <a href="https://fegowoodworker.com/ve-chung-toi/" class="circle-arrow" style="color:#fff;" aria-label="Về FEGO">→</a>
+        </div>
+
+        <div class="policy-4-grid">
+          <a class="policy-card" href="https://fegowoodworker.com/shop/">
+            <div>
+              <svg class="policy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+              </svg>
+              <h4>Sản phẩm FEGO</h4>
+              <p>Duyệt đầy đủ bàn, kệ, tủ, ghế và gương theo danh mục, chất liệu và mức giá.</p>
+            </div>
+            <div class="policy-foot">
+              <span class="policy-dest">Xem toàn bộ sản phẩm</span>
+              <span class="circle-arrow">→</span>
+            </div>
+          </a>
+          <a class="policy-card" href="https://fegowoodworker.com/huong-dan-dat-hang-va-thanh-toan/">
+            <div>
+              <svg class="policy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/>
+              </svg>
+              <h4>Đặt hàng &amp; giao nhận</h4>
+              <p>Hướng dẫn đặt mua, thanh toán và quy trình đóng gói vận chuyển toàn quốc.</p>
+            </div>
+            <div class="policy-foot">
+              <span class="policy-dest">Xem chính sách bán hàng của FEGO</span>
+              <span class="circle-arrow">→</span>
+            </div>
+          </a>
+          <a class="policy-card" href="https://fegowoodworker.com/chinh-sach-doi-tra/">
+            <div>
+              <svg class="policy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/>
+              </svg>
+              <h4>Đổi trả &amp; bảo hành</h4>
+              <p>Hỗ trợ xử lý minh bạch nếu phát sinh lỗi vận chuyển hoặc sai thông số.</p>
+            </div>
+            <div class="policy-foot">
+              <span class="policy-dest">Xem chính sách đổi trả của FEGO</span>
+              <span class="circle-arrow">→</span>
+            </div>
+          </a>
+          <a class="policy-card" href="https://fegowoodworker.com/ve-chung-toi/">
+            <div>
+              <svg class="policy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 001 1h12a1 1 0 001-1V9.5"/><path d="M9.5 21v-6h5v6"/>
+              </svg>
+              <h4>Xưởng mộc FEGO</h4>
+              <p>Câu chuyện làm nghề, quy trình chọn phôi gỗ và gia công trực tiếp tại xưởng.</p>
+            </div>
+            <div class="policy-foot">
+              <span class="policy-dest">Tìm hiểu thêm về FEGO</span>
+              <span class="circle-arrow">→</span>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // Hotspot interactive toggle (Mẫu 1)
+    document.querySelectorAll('.hotspot-dot').forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetId = dot.dataset.pop;
+        const tile = dot.closest('.hotspot-tile');
+        const targetPop = document.getElementById(targetId);
+        const wasOpen = targetPop && targetPop.classList.contains('is-open');
+
+        document.querySelectorAll('.hotspot-dot').forEach(d => d.classList.remove('is-open'));
+        document.querySelectorAll('.hotspot-popover').forEach(p => p.classList.remove('is-open'));
+
+        if (!wasOpen && targetPop) {
+          dot.classList.add('is-open');
+          targetPop.classList.add('is-open');
+        }
+      });
+    });
+
+    // Pill AJAX-style Product Grid filter (Mẫu 4 - Trục chéo Chất liệu)
+    const ideaCards = document.querySelectorAll('#ideas-grid .wd-prod-card');
+    const matArchiveLink = document.getElementById('mat-archive-link');
+    document.querySelectorAll('#idea-tabs .fego-pill-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#idea-tabs .fego-pill-btn').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const filter = btn.dataset.filter;
+        ideaCards.forEach(card => {
+          card.style.display = (card.dataset.cat === filter) ? 'flex' : 'none';
+        });
+        if (matArchiveLink && btn.dataset.link && btn.dataset.label) {
+          matArchiveLink.href = btn.dataset.link;
+          matArchiveLink.textContent = btn.dataset.label;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
